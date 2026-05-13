@@ -1,5 +1,9 @@
 #!/bin/bash
-# Clean old files
-sudo rm -rf /home/ec2-user/react-app/*
-# Update system
-sudo yum update -y
+set -e
+
+# Ensure Node.js and npm are available (Amazon Linux 2)
+curl -sL https://rpm.nodesource.com/setup_18.x | bash -
+yum install -y nodejs
+
+# Stop Nginx before replacing files
+systemctl stop nginx || true
