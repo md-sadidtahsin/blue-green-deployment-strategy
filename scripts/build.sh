@@ -8,5 +8,5 @@ cd /var/www/react-app
 # npm run build
 
 # Copy build output to Nginx root
-rm -rf /usr/share/nginx/html/*
-cp -r dist/* /usr/share/nginx/html/
+sudo rm -rf /usr/share/nginx/html/*
+sudo cp -r dist/* /usr/share/nginx/html/
